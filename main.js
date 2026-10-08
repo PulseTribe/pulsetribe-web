@@ -1,6 +1,33 @@
 // Footer year
 document.getElementById('year').textContent = new Date().getFullYear();
 
+// Mobile nav menu
+const nav = document.querySelector('.nav');
+const toggle = nav && nav.querySelector('.nav-toggle');
+if (toggle) {
+  const setOpen = (open) => {
+    nav.classList.toggle('nav-open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  };
+
+  toggle.hidden = false;
+  toggle.addEventListener('click', () => setOpen(!nav.classList.contains('nav-open')));
+  nav.querySelectorAll('.nav-menu a').forEach((link) => link.addEventListener('click', () => setOpen(false)));
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && nav.classList.contains('nav-open')) {
+      setOpen(false);
+      toggle.focus();
+    }
+  });
+  document.addEventListener('click', (e) => {
+    if (!nav.contains(e.target)) setOpen(false);
+  });
+  window.matchMedia('(min-width: 641px)').addEventListener('change', (e) => {
+    if (e.matches) setOpen(false);
+  });
+}
+
 // Join form: submit to Formspree without leaving the page
 const form = document.querySelector('.join-form');
 if (form) {

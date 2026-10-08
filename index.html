@@ -37,10 +37,16 @@
                 <span>PulseTribe</span>
             </a>
             <div class="nav-links">
-                <a href="#themes">Themes</a>
-                <a href="#how">How it works</a>
-                <a href="#events">Events</a>
+                <div class="nav-menu" id="nav-menu">
+                    <a href="#themes">Themes</a>
+                    <a href="#how">How it works</a>
+                    <a href="#events">Events</a>
+                </div>
                 <a href="#join" class="btn btn-accent btn-sm">Join the tribe</a>
+                <button type="button" class="nav-toggle" aria-controls="nav-menu" aria-expanded="false"
+                        aria-label="Open menu" hidden>
+                    <span></span><span></span><span></span>
+                </button>
             </div>
         </nav>
 
@@ -203,7 +209,7 @@
                 <div class="step">
                     <span class="step-num">2</span>
                     <h3>Pick your events</h3>
-                    <p>Browse the calendar and RSVP to themed gatherings that fit your week.</p>
+                    <p>As our first events are announced, RSVP to the themed gatherings that fit your week.</p>
                 </div>
                 <div class="step">
                     <span class="step-num">3</span>
@@ -222,36 +228,27 @@
     <section id="events" class="section" aria-labelledby="events-h">
         <div class="container">
             <h2 id="events-h" class="h2">Upcoming events</h2>
+            <div class="events-empty">
+                <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                     stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/>
+                    <path d="M3.5 10h17M8 3v4M16 3v4"/>
+                </svg>
+                <p class="events-empty-title">No events on the calendar yet</p>
+                <p>We're planning our first gatherings now. Check back soon, or <a href="#join">join the tribe</a> to hear
+                    as soon as they're announced.</p>
+            </div>
+            <!-- When events are announced, replace .events-empty with a list like this:
             <ul class="events">
                 <li class="event">
                     <span class="event-date">[DATE]</span>
                     <span class="tag tag-fitness">Fitness &amp; Wellness</span>
                     <span class="event-name">[EVENT NAME]</span>
-                    <span class="event-place">[LOCATION]</span>
-                    <a href="#join" class="event-rsvp">RSVP</a>
-                </li>
-                <li class="event">
-                    <span class="event-date">[DATE]</span>
-                    <span class="tag tag-music">Music &amp; Dance</span>
-                    <span class="event-name">[EVENT NAME]</span>
-                    <span class="event-place">[LOCATION]</span>
-                    <a href="#join" class="event-rsvp">RSVP</a>
-                </li>
-                <li class="event">
-                    <span class="event-date">[DATE]</span>
-                    <span class="tag tag-hiking">Hiking &amp; Camping</span>
-                    <span class="event-name">[EVENT NAME]</span>
-                    <span class="event-place">[LOCATION]</span>
-                    <a href="#join" class="event-rsvp">RSVP</a>
-                </li>
-                <li class="event">
-                    <span class="event-date">[DATE]</span>
-                    <span class="tag tag-eco">EcoStrides</span>
-                    <span class="event-name">[EVENT NAME]</span>
-                    <span class="event-place">[LOCATION]</span>
+                    <span class="event-place"></span>
                     <a href="#join" class="event-rsvp">RSVP</a>
                 </li>
             </ul>
+            -->
         </div>
     </section>
 
