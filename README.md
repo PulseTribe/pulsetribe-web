@@ -19,8 +19,8 @@ _headers            caching and security headers (Cloudflare Pages / Netlify)
 
 | Task | Where |
 |---|---|
-| Add or remove an event | `index.html`, the `EVENTS` section. Copy an `<li class="event">` block. Theme classes: `tag-fitness`, `tag-music`, `tag-hiking`, `tag-eco` |
-| Change the hero photo | Replace `assets/hero.jpg` (landscape, ~1920px wide, under 300KB) |
+| Add or remove an event | `index.html`, the `EVENTS` section. While there are no events it shows a "check back soon" message; replace it with the commented-out `<ul class="events">` template below it and copy an `<li class="event">` block per event. Theme classes: `tag-fitness`, `tag-music`, `tag-hiking`, `tag-eco` |
+| Change the hero photo | Replace `assets/hero-sunset.jpg` (landscape, ~2000px wide, under 300KB), or add a new file and update the `url(...)` in `.hero` in `styles.css` |
 | Social links / email | `index.html`, footer |
 | Brand colours | `styles.css`, `:root` at the top |
 
@@ -35,12 +35,10 @@ python3 -m http.server 8000
 
 ## Signup form
 
-The form posts to [Formspree](https://formspree.io) (free tier is enough to start).
+The form posts to [Formspree](https://formspree.io) (form ID `xeaeapnr`, set in the form's `action` in `index.html`).
+Submissions arrive in the Formspree dashboard. To switch forms, replace the ID in the `action`.
 
-1. Create a form at formspree.io and copy its ID.
-2. In `index.html`, replace `YOUR_FORM_ID` in the form's `action`.
-
-Until then, the form shows a "signups open soon" message instead of failing.
+If the `action` ever contains `YOUR_FORM_ID`, the form shows a "signups open soon" message instead of submitting.
 
 ## Deploying on Cloudflare Pages
 
